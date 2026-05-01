@@ -1,0 +1,213 @@
+.landing-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+
+.landing-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 var(--space-md);
+  padding-bottom: 160px;
+  /* Massive safe space for the absolute scroll-indicator */
+  margin-top: 15vh;
+  /* Pushes TANAY BOKARIA out of the navbar zone securely */
+  position: relative;
+  z-index: 10;
+  /* Protected layer */
+}
+
+/* Background elements pushed back */
+.landing-glow {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  /* Behind content */
+  filter: blur(120px);
+  opacity: 0.3;
+}
+
+.landing-glow--secondary {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(94, 234, 212, 0.1) 0%, transparent 70%);
+  top: 30%;
+  left: 70%;
+  opacity: 0.2;
+}
+
+.landing-hero-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  position: relative;
+  z-index: 20;
+}
+
+.landing-intro h1 {
+  font-size: clamp(4rem, 11vw, 9rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: #fff;
+  padding-bottom: 0.1em;
+}
+
+.landing-intro__label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: var(--space-sm);
+}
+
+.landing-divider {
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--glass-border), transparent);
+  margin: var(--space-md) 0;
+}
+
+.landing-info {
+  max-width: 800px;
+  position: relative;
+  z-index: 30;
+  /* Highest priority for readability */
+}
+
+.landing-info__role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.landing-info-h2 {
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.landing-info__sub {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: var(--space-md);
+}
+
+.landing-socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.landing-social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+}
+
+.landing-social-link:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.landing-social-link:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(94, 234, 212, 0.2);
+}
+
+.landing-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-tertiary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  z-index: 20;
+}
+
+.landing-scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  transform-origin: top;
+  animation: scrollDown 2s infinite var(--ease-premium);
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  50.1% {
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-intro h1 {
+    font-size: 16vw;
+  }
+
+  .landing-section {
+    height: auto;
+    padding: 120px 0 60px;
+  }
+}

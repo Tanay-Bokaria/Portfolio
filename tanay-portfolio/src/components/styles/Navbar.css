@@ -1,0 +1,92 @@
+.apple-nav {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 64rem; /* max-w-5xl */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border-radius: 9999px; /* rounded-full */
+  background: rgba(0, 0, 0, 0.4); /* bg-black/40 */
+  backdrop-filter: blur(24px); /* backdrop-blur-xl */
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* border-white/10 */
+  z-index: 50; /* z-50 */
+}
+
+.apple-nav-left, .apple-nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.apple-logo {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.apple-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.apple-nav-links a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.apple-nav-links a:hover {
+  color: #fff;
+}
+
+.apple-nav-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.apple-nav-email {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+.apple-resume-btn {
+  background: #0071e3;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.apple-resume-btn:hover {
+  background: #005bb5;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .apple-nav {
+    width: calc(100% - 2rem);
+    top: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  .apple-nav-center {
+    display: none; /* Hide links on mobile for absolute cleanest look */
+  }
+}

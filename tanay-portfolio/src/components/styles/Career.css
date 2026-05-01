@@ -1,0 +1,141 @@
+.career-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.timeline-header h2 span {
+  color: var(--accent);
+}
+
+.timeline-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(-50%);
+}
+
+.timeline-glow-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--accent), var(--accent), transparent);
+  transform-origin: top;
+  box-shadow: 0 0 15px var(--accent-glow);
+  scale-y: 0;
+  will-change: transform;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: var(--space-lg);
+}
+
+.timeline-item.right {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: var(--space-lg);
+  margin-left: 50%;
+}
+
+.timeline-content {
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  transition: transform 0.4s var(--ease-premium);
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-year {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent-glow);
+  color: var(--accent);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-institution {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-desc {
+  font-size: 0.9375rem;
+  color: var(--text-tertiary);
+}
+
+.timeline-checkpoint {
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+  z-index: 5;
+  transition: all 0.4s ease;
+}
+
+.timeline-item.right .timeline-checkpoint {
+  right: auto;
+  left: -6px;
+}
+
+@media (max-width: 768px) {
+  .timeline-track {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+
+  .timeline-item.right {
+    margin-left: 0;
+    padding-left: 60px;
+  }
+
+  .timeline-checkpoint {
+    left: 14px !important;
+    right: auto !important;
+  }
+}

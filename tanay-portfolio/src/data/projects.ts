@@ -22,6 +22,7 @@ export type Project = {
   logo?: string;
   screenshots?: string[];
   isConfidential?: boolean;
+  researchUrl?: string; // If set, card navigates here instead of /project/:id
 };
 
 export const projects: Project[] = [
@@ -265,6 +266,49 @@ export const projects: Project[] = [
     "Developed a Java Swing expense tracker using MVC architecture and CSV storage.",
 
     status: "live",
+  },
+
+  {
+    id: 7,
+    title: "Container Security",
+    category: "Security Lab · Academic Practical",
+    tools: "Docker · Trivy · Flask · Python",
+    tagList: ["Docker", "Trivy", "DevSecOps", "Container Security", "Python", "Flask"],
+    image: "/images/placeholder.webp",
+    accent: "#22d3ee",
+
+    description:
+      "Enterprise container security architecture demonstrating Docker hardening, non-root execution, and Trivy vulnerability scanning.",
+
+    impact:
+      "Demonstrates a complete DevSecOps pipeline — from Dockerfile best practices to automated Trivy vulnerability scanning — applied to a real containerised application.",
+
+    fullDesc:
+      "An academic practical demonstrating end-to-end container security: building a hardened Docker image, deploying a Flask employee portal under Gunicorn with a non-root user (UID 1001), and running a full Trivy vulnerability scan resulting in zero CRITICAL and zero HIGH severity CVEs.",
+
+    features: [
+      "Minimal python:3.12-slim base image — ~70% smaller attack surface",
+      "Non-root user execution (appuser, UID 1001) — principle of least privilege",
+      "Gunicorn WSGI production server replacing Flask dev server",
+      "HEALTHCHECK instruction for container orchestration liveness",
+      "Trivy vulnerability scan — 0 CRITICAL, 0 HIGH CVEs validated",
+      "Docker layer caching optimised — requirements before source code",
+      ".dockerignore configured to exclude dev artefacts from image",
+      "Metadata labels for maintainability and image lifecycle management",
+    ],
+
+    challenges: [
+      "Learning Docker layer caching strategies and optimising build times",
+      "Configuring non-root filesystem permissions correctly with chown",
+      "Understanding Trivy CVE severity levels and remediation strategies",
+      "Writing a production Dockerfile vs a development one — key differences",
+    ],
+
+    resumeLine:
+      "Built and hardened a containerised Flask employee portal using Docker best practices and ran a full Trivy vulnerability scan as part of a Cybersecurity Engineering academic practical.",
+
+    status: "live",
+    researchUrl: "/research/container-security",
   },
 ];
 

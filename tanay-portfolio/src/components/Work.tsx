@@ -16,6 +16,8 @@ const Work = () => {
     if (project.isConfidential) {
       setSelectedConfidProject(project);
       setIsConfidModalOpen(true);
+    } else if (project.researchUrl) {
+      navigate(project.researchUrl);
     } else {
       navigate(`/project/${project.id}`);
     }

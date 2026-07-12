@@ -7,6 +7,7 @@ import MainContainer from "./components/MainContainer";
 const CertificationsPage = lazy(() => import("./pages/CertificationsPage"));
 const BeyondCodePage = lazy(() => import("./pages/BeyondCodePage"));
 const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
+const ContainerSecurityPage = lazy(() => import("./pages/ContainerSecurityPage"));
 
 import { LoadingProvider } from "./context/LoadingProvider";
 import { SectionProvider } from "./context/SectionContext";
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/certifications" element={<CertificationsPage />} />
                 <Route path="/beyond-code" element={<BeyondCodePage />} />
                 <Route path="/project/:id" element={<ProjectDetailPage />} />
+                <Route path="/research/container-security" element={<ContainerSecurityPage />} />
               </Routes>
             </Suspense>
           </ErrorBoundary>

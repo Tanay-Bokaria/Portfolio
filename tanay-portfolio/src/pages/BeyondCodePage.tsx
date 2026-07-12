@@ -29,6 +29,12 @@ const blogs = [
 
 const research = [
   {
+    title: "Container Security Architecture",
+    description: "A practical enterprise case study demonstrating Docker container hardening, non-root execution, Trivy vulnerability scanning, and secure deployment practices. Achieved 0 CRITICAL and 0 HIGH CVEs on the final image.",
+    href: "/research/container-security",
+    tag: "DevSecOps",
+  },
+  {
     title: "Network Security Fundamentals",
     description: "A video explanation of Network Security Fundamentals and defensive strategies.",
     href: "https://youtu.be/HZsI7hztzJk?si=GJLDiRtNo-xUzUgC",
@@ -106,9 +112,18 @@ const BeyondCodePage = () => {
             <h3 style={{ fontSize: '18px', color: '#fff', marginBottom: '12px', lineHeight: 1.4, paddingRight: item.tag ? '80px' : '0' }}>{item.title}</h3>
             <p style={{ fontSize: '14px', color: '#adacac', lineHeight: 1.6, marginBottom: '20px', flexGrow: 1 }}>{item.description}</p>
             {'href' in item ? (
-              <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accentColor)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                {activeTab === 'sla' ? 'OPEN DRIVE' : 'EXPLORE NOW'} &rarr;
-              </a>
+              item.href.startsWith('/') ? (
+                <button
+                  onClick={() => navigate(item.href as string)}
+                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--accentColor)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', fontFamily: 'inherit' }}
+                >
+                  READ CASE STUDY &rarr;
+                </button>
+              ) : (
+                <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accentColor)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  {activeTab === 'sla' ? 'OPEN DRIVE' : 'EXPLORE NOW'} &rarr;
+                </a>
+              )
             ) : (
               <span style={{ fontSize: '12px', color: '#666' }}>{item.date}</span>
             )}
